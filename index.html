@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scribble It!</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="logo"></div>
+    <div class="field">
+        <canvas id="canvas"></canvas>
+        <div class="tools">
+            <button onclick="undo_last()" class="button"><strong>Undo</strong></button>
+            <button onClick="clear_canvas()" class="button"><strong>Clear</strong></button>
+            <button onClick="eraser()" class="button"><strong>Erase</strong></button>
+
+            <div onClick="change_color(this)" class="color-field" style="background: black;"></div>
+            <div onClick="change_color(this)" class="color-field" style="background: rgb(197, 29, 29);"></div>
+            <div onClick="change_color(this)" class="color-field" style="background: rgb(3, 179, 3);"></div>
+            <div onClick="change_color(this)" class="color-field" style="background: rgb(0, 47, 255);"></div>
+            <div onClick="change_color(this)" class="color-field" style="background: #ffbf00;"></div>
+
+            <input onInput="draw_color = this.value" type="color" class="color-picker">
+            <input onInput="draw_width = this.value" value="10" type="range" min="1" max="100" class="pen-range slider">
+            <button onClick="save()" class="button"><strong>Save</strong></button>
+        </div>
+    </div>   
+
+    <div id="footer">
+        <span class="text">
+            <span style="color: white; font-size: 16px;">made with love by <span style="color:red; font-size: 16px;">sezer</span>.</span>
+        </span>
+        <span class="social">
+            <a href="https://www.instagram.com/sezergms" class="social_icon instagram" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:white"></i></a>
+            <a href="https://github.com/sezergumus" class="social_icon git" style="margin-left: 5px;" target="_blank"><i class="fa fa-github" style="font-size:24px;color:white"></i></a>
+            <a href="https://open.spotify.com/user/t7nu43k0ttbkgcea26kte4v71?si=b5bf4d87f282412a" class="social_icon spotify" style="margin-left: 5px;" target="_blank"><i class="fa fa-spotify" style="font-size:24px;color:white"></i></a>      
+        </span>    
+    </div>
+    <script src="sketch.js"></script>
+</body>
+</html>
